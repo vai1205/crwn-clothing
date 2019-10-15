@@ -11,29 +11,34 @@ class Directory extends Component {
                 {
                     title:'hats',
                     id:'1',
-                    imgUrl:'https://i.ibb.co/cvpntL1/hats.png'
+                    imgUrl:'https://i.ibb.co/cvpntL1/hats.png',
+                    link:'hats'
                 },
                 {
                     title:'jackets',
                     id:'2',
-                    imgUrl:'https://i.ibb.co/px2tCc3/jackets.png'
+                    imgUrl:'https://i.ibb.co/px2tCc3/jackets.png',
+                    link:''
                 },
                 {
                     title:'sneakers',
                     id:'3',
-                    imgUrl:'https://i.ibb.co/0jqHpnp/sneakers.png'
+                    imgUrl:'https://i.ibb.co/0jqHpnp/sneakers.png',
+                    link:''
                 },
                 {
                     title:'women',
                     id:'4',
                     imgUrl:'https://i.ibb.co/GCCdy8t/womens.png',
-                    size:'large'
+                    size:'large',
+                    link:''
                 },
                 {
                     title:'men',
                     id:'5',
                     imgUrl:'https://i.ibb.co/R70vBrQ/men.png',
-                    size:'large'
+                    size:'large',
+                    link:''
                 }
             ]
         }
@@ -42,13 +47,11 @@ class Directory extends Component {
         return(
             <div className='directory-menu'>   
                {
-                   this.state.sources.map(({id,title, imgUrl, size}) => {
+                   this.state.sources.map(({id,...otherSourceUrl}) => {
                        return(
                            <MenuItem
                            key={id} 
-                           title={title} 
-                           imgUrl={imgUrl}
-                           size={size}
+                           {...otherSourceUrl}
                            />
                        )
                    })
