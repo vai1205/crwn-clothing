@@ -1,14 +1,19 @@
 import React from 'react'
 import '../../pages/ShopPage.component'
+import './collection-preview.styles.scss'
+import CollectionItem from '../collection-item/collection-item.component'
 
-const CollectionPreview = (props) => {
+const CollectionPreview = ({items,title}) => {
     return(
-        <div>
-            {
-                props.items.filter((item, index)=> index<4 ).map(({id, name}, index)=>(
-                    <p key={id}>{name}</p>
-                ))
-            }
+        <div className='collection-preview'>
+            <h1 className='title'>{title}</h1>
+            <div className='preview'>
+                {
+                    items.filter((item, index)=> index<4 ).map(({id, ...otherItemProps}, index)=>(
+                        <CollectionItem key={id} {...otherItemProps} />
+                    ))
+                }
+            </div>
         </div>
     )
 }
