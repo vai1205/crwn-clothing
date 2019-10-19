@@ -18,13 +18,13 @@ class Directory extends Component {
                     title:'jackets',
                     id:'2',
                     imgUrl:'https://i.ibb.co/px2tCc3/jackets.png',
-                    link:''
+                    link:'jackets'
                 },
                 {
                     title:'sneakers',
                     id:'3',
                     imgUrl:'https://i.ibb.co/0jqHpnp/sneakers.png',
-                    link:''
+                    link:'sneakers'
                 },
                 {
                     title:'women',
